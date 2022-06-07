@@ -30,15 +30,16 @@ app.get("/", (req, res) => {
     res.send("app is running!?");
 });
 
-// const CONNECTION_URL =
-//     "mongodb+srv://ericyakubu:Kislotius1@cluster0.3lm1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const PORT = process.env.PORT || process.env.REACT_APP_PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose
-    .connect(process.env.REACT_APP_CONNECTION_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(
+        `mongodb+srv://ericyakubu:Kislotius1@cluster0.3lm1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        }
+    )
     .then(() =>
         app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
     )

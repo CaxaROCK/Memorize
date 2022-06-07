@@ -8,7 +8,7 @@ const postSchema = mongoose.Schema({
     tags: [String],
     selectedFile: String,
     likes: {
-        type: [String], //this is where the array of user ids will be stored for future manipulation of likes
+        type: [String],
         default: [],
     },
     comments: { type: [String], default: [] },

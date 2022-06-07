@@ -1,12 +1,6 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
-// if user wants to like a post
-// click the like button => auth middleware (NEXT) => like controller...
-
-// ? basically confirms that user has permissions to do something on the website,
-// ? for example he cannot like same post twice, he cannot create/update/delete post if he's not loggedin
-// ? or is not the author of the post and etc. this is how we put a restriction on user access
 
 const auth = async (req, res, next) => {
     try {

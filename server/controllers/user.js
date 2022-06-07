@@ -21,7 +21,7 @@ export const signin = async (req, res) => {
 
         const token = jwt.sign(
             { email: existingUser.email, id: existingUser._id },
-            process.env.REACT_APP_SECRET, // "test" here is a secret that we use to make 'hacking' harder for others. needs to be in .env file for security reasons
+            `sercret_thingy_goes_here`, // "test" here is a secret that we use to make 'hacking' harder for others. needs to be in .env file for security reasons
             { expiresIn: "5h" } // exparation time of a token, after an hour user will have to relogin
         );
 
@@ -49,7 +49,7 @@ export const signup = async (req, res) => {
         });
         const token = jwt.sign(
             { email: user.email, id: user._id },
-            process.env.REACT_APP_SECRET,
+            `sercret_thingy_goes_here`,
             {
                 expiresIn: "5h",
             }
