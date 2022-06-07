@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 // const CONNECTION_URL =
 //     "mongodb+srv://ericyakubu:Kislotius1@cluster0.3lm1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const PORT = process.env.REACT_APP_PORT || 5000;
+const PORT = process.env.PORT || process.env.REACT_APP_PORT || 5000;
 
 mongoose
     .connect(process.env.REACT_APP_CONNECTION_URL, {
